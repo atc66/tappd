@@ -11,12 +11,20 @@ const ProfileSchema = new Schema({
     required: true,
     max: 40
   },
+  location: {
+    type: String,
+    required: true
+  },
+  bio: {
+    type: String,
+    required: true
+  },
   status: {
     type: String,
     required: true
   },
   social: {
-    twiiter: {
+    twitter: {
       type: String
     },
     instagram: {
