@@ -1,28 +1,73 @@
-.App {
-  text-align: center;
+/* /* ---------------------- */
+/* --------SET UP-------- */
+/* ---------------------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+html,
+body {
+  background-color: #fff;
+  color: #555;
+  font-family: "Lato", "Arial", sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+/* ------------------------- */
+/* --------Headings--------- */
+/* ------------------------- */
+h1,
+h2,
+h3 {
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+h1 {
+  /* h1 has magin from normalize */
+  margin-top: 0;
+  margin-bottom: 20px;
+  /* color: #fff; */
+  /* Our basic font size is 20px set in the html rule, we want this to be 200% */
+  font-size: 240%;
+  word-spacing: 3px;
 }
 
-.App-title {
-  font-size: 1.5em;
+/* ----------------------------------  */
+/* --------Reusable Components---------*/
+/* ----------------------------------- */
+
+header {
+  /* linear gradient darkens the picture to make font more legible */
+  background-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgba(0, 0, 0, 0.7)),
+      to(rgba(0, 0, 0, 0.7))
+    ),
+    url(img/happyHour.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(img/happyHour.jpg);
+  background-size: cover;
+  background-position: center;
+  /* Fill the whole viewport */
+  height: 100vh;
+  background-attachment: fixed;
 }
 
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.hero-text-box {
+  position: absolute;
+  width: 1140px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
