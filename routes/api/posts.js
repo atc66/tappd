@@ -3,8 +3,10 @@ const router = express.Router();
 const mongoose = require("mongoose");
 const passport = require("passport");
 
-// Post Models
+// Post Model
 const Post = require("../../models/Post");
+// Profile Model
+const Profile = require("../../models/Profile");
 
 // Post validation
 const validatePostInput = require("../../validation/post");
@@ -35,4 +37,110 @@ router.post(
   }
 );
 
+// @Route GET api/posts
+// @DESC GET posts route
+// @access public
+
+router.get("/", (req, res) => {
+  Post.find()
+    .sort({ date: -1 })
+    .then(posts => res.json(posts))
+    .catch(err => res.status(404));
+});
+
+// @Route GET api/posts/:id
+// @DESC GET posts route
+// @access public
+router.get("/:id", (req, res) => {
+  Post.findById(req.params.id)
+    .then(posts => res.json(posts))
+    .catch(err =>
+      res.status(404).json({ nopostfound: "No post found with that ID" })
+    );
+});
+
+// @Route DELETE api/posts/:id
+// @DESC DELETE posts route
+// @access private
+
+router.delete(
+  "/:id",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    Profile.findOne({ user: req.user.id }).then(profile => {
+      Post.findById(req.params.id)
+        .then(post => {
+          // Check for post owner
+          if (post.user.toString() !== req.user.id) {
+            return res.status(401).json({
+              notauthorized: "User not authorized to delete this post"
+            });
+          }
+          post.remove().then(() => res.json({ success: true }));
+        })
+        .catch(err =>
+          res.status(404).json({ postnotfound: "That post was not found" })
+        );
+    });
+  }
+);
+
+// @Route POST api/posts/like/:id
+// @DESC LIKE posts route
+// @access private
+router.post(
+  "/like/:id",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    Profile.findOne({ user: req.user.id }).then(profile => {
+      Post.findById(req.params.id)
+        .then(post => {
+          if (
+            post.likes.filter(like => like.user.toString() === req.user.id)
+              .length > 0
+          ) {
+            return res
+              .status(400)
+              .json({ alreadylike: "User already liked this post" });
+          }
+          post.likes.unshift({ user: req.user.id });
+          post.save().then(post => res.json(post));
+        })
+        .catch(err =>
+          res.status(404).json({ postnotfound: "That post was not found" })
+        );
+    });
+  }
+);
+
+// @Route POST api/posts/unlike/:id
+// @DESC UNLIKE posts route
+// @access private
+router.post(
+  "/unlike/:id",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    Profile.findOne({ user: req.user.id }).then(profile => {
+      Post.findById(req.params.id)
+        .then(post => {
+          if (
+            post.likes.filter(like => like.user.toString() === req.user.id)
+              .length === 0
+          ) {
+            return res
+              .status(400)
+              .json({ alreadylike: "User has not liked this post yet" });
+          }
+          const removeIndex = post.likes
+            .map(item => item.user.toString())
+            .indexOf(req.user.id);
+          post.likes.splice(removeIndex, 1);
+          post.save().then(post => res.json(post));
+        })
+        .catch(err =>
+          res.status(404).json({ postnotfound: "That post was not found" })
+        );
+    });
+  }
+);
 module.exports = router;
