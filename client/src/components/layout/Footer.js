@@ -4,14 +4,7 @@ export default () => {
   return (
     <footer>
       <div className="row">
-        <div className="col span-1-of-2">
-          <ul className="footer-nav">
-            <li>
-              <a href="#features">About us</a>
-            </li>
-          </ul>
-        </div>
-        <div className="col span-1-of-2">
+        <div className="row">
           <ul className="social-links">
             <li>
               <a href="https://www.facebook.com">
