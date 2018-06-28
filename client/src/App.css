@@ -400,3 +400,11 @@ input[type="password"] {
   margin: 10px 0;
   float: center;
 }
+
+/* ---------------------- */
+/* -----Dashboard form --- */
+/* ---------------------- */
+
+.btn-profile {
+  margin-left: 1%;
+}

@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
-// import classnames from "classnames";
 import { connect } from "react-redux";
 import { registerUser } from "../../actions/authActions";
+import TextFieldGroup from "../common/TextFieldGroup";
 
 class Register extends Component {
   constructor() {
@@ -66,69 +66,52 @@ class Register extends Component {
                 <div className="col span-1-of-3">
                   <label htmlFor="name">Name</label>
                 </div>
-                <div className="col span-2-of-3">
-                  <input
-                    type="text"
-                    placeholder="Your Name"
-                    name="name"
-                    value={this.state.name}
-                    onChange={this.onChange}
-                  />
-                  {errors.name && (
-                    <div className="invalid-feedback">{errors.name}</div>
-                  )}
-                </div>
+                <TextFieldGroup
+                  placeholder="Name"
+                  name="name"
+                  value={this.state.name}
+                  onChange={this.onChange}
+                  error={errors.name}
+                />
               </div>
               <div className="row">
                 <div className="col span-1-of-3">
                   <label htmlFor="email">Email</label>
                 </div>
-                <div className="col span-2-of-3">
-                  <input
-                    type="email"
-                    placeholder="Your Email Address"
-                    name="email"
-                    value={this.state.email}
-                    onChange={this.onChange}
-                  />
-                  {errors.email && (
-                    <div className="invalid-feedback">{errors.email}</div>
-                  )}
-                </div>
+                <TextFieldGroup
+                  placeholder="Email"
+                  name="email"
+                  type="email"
+                  value={this.state.email}
+                  onChange={this.onChange}
+                  error={errors.email}
+                />
               </div>
               <div className="row">
                 <div className="col span-1-of-3">
                   <label htmlFor="password">Password</label>
                 </div>
-                <div className="col span-2-of-3">
-                  <input
-                    type="password"
-                    placeholder="Password"
-                    name="password"
-                    value={this.state.password}
-                    onChange={this.onChange}
-                  />
-                  {errors.password && (
-                    <div className="invalid-feedback">{errors.password}</div>
-                  )}
-                </div>
+                <TextFieldGroup
+                  placeholder="Password"
+                  name="password"
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.onChange}
+                  error={errors.password}
+                />
               </div>
               <div className="row">
                 <div className="col span-1-of-3">
                   <label htmlFor="password2">Confirm Password</label>
                 </div>
-                <div className="col span-2-of-3">
-                  <input
-                    type="password"
-                    placeholder="Match Password"
-                    name="password2"
-                    value={this.state.password2}
-                    onChange={this.onChange}
-                  />
-                  {errors.password2 && (
-                    <div className="invalid-feedback">{errors.password2}</div>
-                  )}
-                </div>
+                <TextFieldGroup
+                  placeholder="Confirm Password"
+                  name="password2"
+                  type="password"
+                  value={this.state.password2}
+                  onChange={this.onChange}
+                  error={errors.password2}
+                />
               </div>
               <div className="row">
                 <input type="submit" className="form-submit" />

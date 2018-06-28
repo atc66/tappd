@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-// import classnames from "classnames";
 import { loginUser } from "../../actions/authActions";
+import TextFieldGroup from "../common/TextFieldGroup";
 
 class Login extends Component {
   constructor() {
@@ -58,39 +58,29 @@ class Login extends Component {
           </div>
           <div className="row">
             <form onSubmit={this.onSubmit}>
-              <div className="row">
-                <div className="col span-1-of-3">
-                  <label htmlFor="name">Email</label>
-                </div>
-                <div className="col span-2-of-3">
-                  <input
-                    type="text"
-                    placeholder="Email"
-                    name="email"
-                    value={this.state.email}
-                    onChange={this.onChange}
-                  />
-                  {errors.email && (
-                    <div className="invalid-feedback">{errors.email}</div>
-                  )}
-                </div>
+              <div className="col span-1-of-3">
+                <label htmlFor="name">Email</label>
               </div>
+              <TextFieldGroup
+                placeholder="Email"
+                name="email"
+                type="email"
+                value={this.state.email}
+                onChange={this.onChange}
+                error={errors.email}
+              />
               <div className="row">
                 <div className="col span-1-of-3">
                   <label htmlFor="password">Password</label>
                 </div>
-                <div className="col span-2-of-3">
-                  <input
-                    type="password"
-                    placeholder="Password"
-                    name="password"
-                    value={this.state.password}
-                    onChange={this.onChange}
-                  />
-                  {errors.password && (
-                    <div className="invalid-feedback">{errors.password}</div>
-                  )}
-                </div>
+                <TextFieldGroup
+                  placeholder="Password"
+                  name="password"
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.onChange}
+                  error={errors.password}
+                />
               </div>
               <div className="row">
                 <input type="submit" className="form-submit" />
