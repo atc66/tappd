@@ -1,9 +1,21 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class Landing extends Component {
   render() {
     return (
       <div>
+        <header>
+          <div className="hero-text-box">
+            <h1>No more indecision. Find your Happy Hour.</h1>
+            <Link className="btn btn-full" to="/register">
+              Sign Up
+            </Link>
+            <a className="btn btn-ghost" href="#features">
+              Show me more
+            </a>
+          </div>
+        </header>
         <section className="section-features" id="features">
           <div className="row">
             <h2>Go somewhere new &mdash; not across the street</h2>
@@ -48,7 +60,11 @@ class Landing extends Component {
             <h2>We're currently in Philadelphia</h2>
           </div>
           <div className="row">
-            <figure className="city-photo city-feature" />
+            <figure className="city-photo city-feature">
+              <div>
+                <img src="" alt="" />
+              </div>
+            </figure>
             <h3 className="city-feature">Philadelphia</h3>
             <div className="city-feature">
               <i className="fas fa-building icon-small" />
@@ -60,7 +76,12 @@ class Landing extends Component {
             </div>
             <div className="city-feature">
               <i className="fab fa-twitter icon-small" />
-              <a href="#">@tappd_phl</a>
+              <a
+                href="https://www.twitter.com
+              "
+              >
+                @tappd_phl
+              </a>
             </div>
           </div>
         </section>

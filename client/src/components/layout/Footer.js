@@ -14,17 +14,17 @@ export default () => {
         <div className="col span-1-of-2">
           <ul className="social-links">
             <li>
-              <a href="#">
+              <a href="https://www.facebook.com">
                 <i className="fab fa-facebook" />
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="https://www.twitter.com">
                 <i className="fab fa-twitter" />
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="https://www.instagram.com">
                 <i className="fab fa-instagram" />
               </a>
             </li>

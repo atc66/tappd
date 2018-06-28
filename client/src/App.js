@@ -1,8 +1,12 @@
 import React, { Component } from "react";
-import Header from "./components/layout/Header";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
+// Components
+import Navbar from "./components/layout/Navbar";
 import Landing from "./components/layout/Landing";
 import Footer from "./components/layout/Footer";
-// import Landing from "./components/layout/Landing";
+import Register from "./components/auth/Register";
+import Login from "./components/auth/Login";
 
 import "./App.css";
 import "./grid.css";
@@ -11,11 +15,17 @@ import "./normalize.css";
 class App extends Component {
   render() {
     return (
-      <div>
-        <Header />
-        <Landing />
-        <Footer />
-      </div>
+      <Router>
+        <div className="App">
+          <Navbar />
+          <Route exact path="/" component={Landing} />
+          <div className="container">
+            <Route exact path="/register" component={Register} />
+            <Route exact path="/login" component={Login} />
+          </div>
+          <Footer />
+        </div>
+      </Router>
     );
   }
 }

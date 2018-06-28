@@ -21,13 +21,17 @@ body {
 }
 
 h1 {
-  /* h1 has magin from normalize */
+  /* h1 has margin from normalize */
   margin-top: 0;
   margin-bottom: 20px;
   color: #fff;
   /* Our basic font size is 20px set in the html rule, we want this to be 200% */
   font-size: 240%;
   word-spacing: 3px;
+}
+
+.heading {
+  color: #555;
 }
 /* -----------------------------------  */
 /* --------Reusable Components---------*/
@@ -69,16 +73,22 @@ a:active {
   font-size: 300%;
   width: auto;
   float: left;
-  margin-top: 40px;
+  /* margin-top: 20px; */
   margin-right: 10px;
   color: white;
+}
+
+nav {
+  background-color: #333;
+  padding: 30px;
+  font-size: 80%;
 }
 
 .main-nav {
   display: block;
   float: right;
   list-style: none;
-  margin-top: 55px;
+  margin-top: 15px;
 }
 .main-nav li {
   display: inline-block;
@@ -168,8 +178,8 @@ h3 {
 h1 {
   /* h1 has magin from normalize */
   margin-top: 0;
-  /* margin-bottom: 20px; */
-  /* color: #fff; */
+  margin-bottom: 20px;
+  color: #fff;
   /* Our basic font size is 20px set in the html rule, we want this to be 200% */
   font-size: 240%;
   word-spacing: 3px;
@@ -363,4 +373,30 @@ footer p {
 
 .fa-instagram:hover {
   color: #e95950;
+}
+
+/* ---------------------- */
+/* -----Register form --- */
+/* ---------------------- */
+
+.contact-form {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.form-header {
+  text-align: center;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 7px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
+
+.form-submit {
+  margin: 10px 0;
+  float: center;
 }
