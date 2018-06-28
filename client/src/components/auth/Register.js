@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+
 class Register extends Component {
   constructor() {
     super();
@@ -37,7 +38,7 @@ class Register extends Component {
             <h2>Sign Up</h2>
           </div>
           <div className="row">
-            <h3 className="form-header">Create your DevConnector account</h3>
+            <h3 className="form-header">Create your Tappd account</h3>
           </div>
           <div className="row">
             <form onSubmit={this.onSubmit}>
