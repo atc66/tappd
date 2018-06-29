@@ -90,56 +90,59 @@ class CreateProfile extends Component {
             Go Back
           </a>
         </div>
-
-        <div className="row">
-          <p className="lead text-center">
-            Let's get some information to make your profile stand out
-          </p>
-          <small className="d-block pb-3">* = required field</small>
-          <form onSubmit={this.onSubmit}>
-            <TextFieldGroup
-              placeholder="* Profile handle"
-              name="handle"
-              value={this.state.handle}
-              onChange={this.onChange}
-              error={errors.handle}
-              info="A unique handle for your profile URL."
-              required
-            />
-            <TextFieldGroup
-              placeholder="Location"
-              name="location"
-              value={this.state.location}
-              onChange={this.onChange}
-              error={errors.location}
-              info="City and State (New York, NY)"
-            />
-            <TextAreaFieldGroup
-              placeholder="A short bio of yourself"
-              name="bio"
-              value={this.state.bio}
-              onChange={this.onChange}
-              error={errors.bio}
-              info="Tell us a little bit about yourself."
-            />
-            <button
-              type="button"
-              onClick={() => {
-                this.setState(prevState => ({
-                  displaySocialInputs: !prevState.displaySocialInputs
-                }));
-              }}
-              className="btn btn-ghost"
-            >
-              Add Social Network Links
-            </button>
-            <span className="text-muted">Optional</span>
-            {socialInputs}
-            <div className="row">
-              <input type="submit" value="Submit" className="btn" />
-            </div>
-          </form>
-        </div>
+        <section>
+          <div className="row">
+            <p className="lead text-center">
+              Let's get some information to make your profile stand out
+            </p>
+            <small className="d-block pb-3">* = required field</small>
+            <form onSubmit={this.onSubmit}>
+              <TextFieldGroup
+                placeholder="* Profile handle"
+                name="handle"
+                value={this.state.handle}
+                onChange={this.onChange}
+                error={errors.handle}
+                info="A unique handle for your profile URL."
+                required
+              />
+              <TextFieldGroup
+                placeholder="Location"
+                name="location"
+                value={this.state.location}
+                onChange={this.onChange}
+                error={errors.location}
+                info="City and State (New York, NY)"
+              />
+              <TextAreaFieldGroup
+                placeholder="A short bio of yourself"
+                name="bio"
+                value={this.state.bio}
+                onChange={this.onChange}
+                error={errors.bio}
+                info="Tell us a little bit about yourself."
+              />
+              <section>
+                <button
+                  type="button"
+                  onClick={() => {
+                    this.setState(prevState => ({
+                      displaySocialInputs: !prevState.displaySocialInputs
+                    }));
+                  }}
+                  className="btn btn-ghost"
+                >
+                  Add Social Network Links
+                </button>
+                <span className="text-muted">Optional</span>
+                {socialInputs}
+              </section>
+              <div className="row">
+                <input type="submit" value="Submit" className="btn" />
+              </div>
+            </form>
+          </div>
+        </section>
       </section>
     );
   }

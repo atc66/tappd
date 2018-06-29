@@ -25,10 +25,12 @@ class Profiles extends Component {
       }
     }
     return (
-      <div className="row">
-        <h2>Tappr Profiles</h2>
-        {profileItems}
-      </div>
+      <section>
+        <div className="row">
+          <h2>Tappr Profiles</h2>
+          {profileItems}
+        </div>
+      </section>
     );
   }
 }
