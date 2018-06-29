@@ -27,7 +27,7 @@ class Profile extends Component {
       profileContent = <Spinner />;
     } else {
       profileContent = (
-        <div>
+        <section className="section-profile-content">
           <div className="row">
             <Link to="/profiles" className="btn">
               Back to Profiles
@@ -35,7 +35,7 @@ class Profile extends Component {
           </div>
           <ProfileHeader profile={profile} />
           <ProfileAbout profile={profile} />
-        </div>
+        </section>
       );
     }
     return <div className="row">{profileContent}</div>;

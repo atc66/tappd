@@ -7,7 +7,7 @@ class ProfileItem extends Component {
   render() {
     const { profile } = this.props;
     return (
-      <section>
+      <div>
         <div className="row">
           <h3 className="col span-1-of-3">{profile.user.name}</h3>
           <p className="col span-1-of-3">
@@ -17,7 +17,7 @@ class ProfileItem extends Component {
             View Profile
           </Link>
         </div>
-      </section>
+      </div>
     );
   }
 }

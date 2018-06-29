@@ -11,12 +11,13 @@ const InputGroup = ({
   onChange
 }) => {
   return (
-    <div>
-      <span>
+    <div className="add-on">
+      <span className="add-on-item">
         <i className={icon} />
       </span>
-
       <input
+        className="add-on-field"
+        type={type}
         placeholder={placeholder}
         name={name}
         value={value}

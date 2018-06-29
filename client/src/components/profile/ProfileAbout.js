@@ -9,12 +9,12 @@ class ProfileAbout extends Component {
     const firstName = profile.user.name.trim().split(" ")[0];
     return (
       <div className="row">
-        <div>
+        <section className="section-profile-about">
           <div className="row">
             <h3>{firstName}'s Bio</h3>
             <p>{isEmpty(profile.bio) ? null : <span>{profile.bio}</span>}</p>
           </div>
-        </div>
+        </section>
       </div>
     );
   }

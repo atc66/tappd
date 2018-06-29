@@ -68,11 +68,7 @@ class Landing extends Component {
             <h2>We're currently in Philadelphia</h2>
           </div>
           <div className="row">
-            <figure className="city-photo city-feature">
-              <div>
-                <img src="" alt="" />
-              </div>
-            </figure>
+            <figure className="city-photo city-feature" />
             <h3 className="city-feature">Philadelphia</h3>
             <div className="city-feature">
               <i className="fas fa-building icon-small" />
