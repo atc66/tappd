@@ -12,14 +12,9 @@ const ProfileSchema = new Schema({
     max: 40
   },
   location: {
-    type: String,
-    required: true
+    type: String
   },
   bio: {
-    type: String,
-    required: true
-  },
-  status: {
     type: String,
     required: true
   },
