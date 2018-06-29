@@ -5,9 +5,7 @@ module.exports = function validateProfileInput(data) {
   let errors = {};
 
   data.handle = !isEmpty(data.handle) ? data.handle : "";
-  data.status = !isEmpty(data.status) ? data.status : "";
   data.bio = !isEmpty(data.bio) ? data.bio : "";
-  data.location = !isEmpty(data.location) ? data.location : "";
 
   // Is it an email? use !validator bc we are checking to see if it doesnt work
   if (!Validator.isLength(data.handle, { min: 2, max: 40 })) {
@@ -18,15 +16,8 @@ module.exports = function validateProfileInput(data) {
   if (Validator.isEmpty(data.handle)) {
     errors.handle = "Handle field is required";
   }
-
-  if (Validator.isEmpty(data.status)) {
-    errors.status = "Status field is required";
-  }
   if (Validator.isEmpty(data.bio)) {
     errors.bio = "Bio field is required";
-  }
-  if (Validator.isEmpty(data.location)) {
-    errors.location = "Location field is required";
   }
 
   // Social Websites
