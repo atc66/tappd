@@ -476,3 +476,11 @@ textarea {
 .section-profile-header h2 {
   text-align: center;
 }
+
+/* ---------------------- */
+/* -----like button --- */
+/* ---------------------- */
+
+.btn-like {
+  color: #008000;
+}

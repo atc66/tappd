@@ -22,6 +22,9 @@ class Navbar extends Component {
           <Link to="/profiles">tapprs</Link>
         </li>
         <li>
+          <Link to="/feed">Feed</Link>
+        </li>
+        <li>
           <Link to="/dashboard">Dashboard</Link>
         </li>
         <li>
