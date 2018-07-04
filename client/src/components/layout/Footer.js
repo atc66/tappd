@@ -25,7 +25,7 @@ export default () => {
         </div>
       </div>
       <div className="row">
-        <p>Copyright &copy; {new Date().getFullYear()} Tappd</p>
+        <p>Copyright &copy; {new Date().getFullYear()} FirstCall</p>
       </div>
     </footer>
   );

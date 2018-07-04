@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import TextAreaFieldGroup from "../common/TextAreaFieldGroup";
-import { addPost } from "../../actions/postActions";
+import { addComment } from "../../actions/locationActions";
 
-class PostForm extends Component {
+class CommentForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -24,13 +24,14 @@ class PostForm extends Component {
   onSubmit(e) {
     e.preventDefault();
     const { user } = this.props.auth;
+    const { locationId } = this.props;
 
-    const newPost = {
+    const newComment = {
       text: this.state.text,
       name: user.name
     };
 
-    this.props.addPost(newPost);
+    this.props.addComment(locationId, newComment);
     this.setState({ text: "" });
   }
 
@@ -42,21 +43,23 @@ class PostForm extends Component {
     const { errors } = this.state;
     return (
       <section className="section-profile-header">
-        <div>
-          <div>
-            <h2>Say Something...</h2>
-            <div>
+        <div className="post-form mb-3">
+          <div className="card card-info">
+            <div className="card-header bg-info text-white">
+              Leave a Comment...
+            </div>
+            <div className="card-body">
               <form onSubmit={this.onSubmit}>
                 <div className="form-group">
                   <TextAreaFieldGroup
-                    placeholder="Create a post"
+                    placeholder="Reply to Location"
                     name="text"
                     value={this.state.text}
                     onChange={this.onChange}
                     error={errors.text}
                   />
                 </div>
-                <button type="submit" className="btn">
+                <button type="submit" className="btn btn-dark">
                   Submit
                 </button>
               </form>
@@ -68,9 +71,10 @@ class PostForm extends Component {
   }
 }
 
-PostForm.propTypes = {
-  addPost: PropTypes.func.isRequired,
+CommentForm.propTypes = {
+  addComment: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
+  locationId: PropTypes.string.isRequired,
   errors: PropTypes.object.isRequired
 };
 
@@ -81,5 +85,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { addPost }
-)(PostForm);
+  { addComment }
+)(CommentForm);

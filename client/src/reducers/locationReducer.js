@@ -1,45 +1,47 @@
 import {
-  ADD_POST,
-  GET_POSTS,
-  GET_POST,
-  DELETE_POST,
-  POST_LOADING
+  ADD_LOCATION,
+  GET_LOCATIONS,
+  LOCATION_LOADING,
+  GET_LOCATION,
+  DELETE_LOCATION
 } from "../actions/types";
 
 const initialState = {
-  posts: [],
-  post: {},
+  locations: [],
+  location: {},
   loading: false
 };
 
 export default function(state = initialState, action) {
   switch (action.type) {
-    case POST_LOADING:
+    case LOCATION_LOADING:
       return {
         ...state,
         loading: true
       };
-    case GET_POSTS:
+    case GET_LOCATIONS:
       return {
         ...state,
-        posts: action.payload,
+        locations: action.payload,
         loading: false
       };
-    case GET_POST:
+    case GET_LOCATION:
       return {
         ...state,
-        post: action.payload,
+        location: action.payload,
         loading: false
       };
-    case ADD_POST:
+    case ADD_LOCATION:
       return {
         ...state,
-        posts: [action.payload, ...state.posts]
+        locations: [action.payload, ...state.locations]
       };
-    case DELETE_POST:
+    case DELETE_LOCATION:
       return {
         ...state,
-        posts: state.posts.filter(post => post._id !== action.payload)
+        locations: state.locations.filter(
+          location => location._id !== action.payload
+        )
       };
     default:
       return state;

@@ -30,54 +30,48 @@ class PostItem extends Component {
   render() {
     const { post, auth, showActions } = this.props;
     return (
-      <section>
-        <div className="card card-body mb-3">
-          <div className="row">
-            <div className="col-md-2">
-              <p className="text-center">{post.name}</p>
-            </div>
-            <div className="col-md-10">
-              <p className="lead">{post.text}</p>
-              {showActions ? (
-                <span>
-                  <button
-                    onClick={this.onLikeClick.bind(this, post._id)}
-                    type="button"
-                    className="btn btn-light mr-1"
-                  >
-                    <i
-                      className={classnames("fas fa-thumbs-up", {
-                        "btn-like": this.findUserLike(post.likes)
-                      })}
-                    />
-                    <span className="badge badge-light">
-                      {post.likes.length}
-                    </span>
-                  </button>
-                  <button
-                    onClick={this.onUnlikeClick.bind(this, post._id)}
-                    type="button"
-                    className="btn btn-light mr-1"
-                  >
-                    <i className="text-secondary fas fa-thumbs-down" />
-                  </button>
-                  <Link to={`/post/${post._id}`} className="btn btn-info mr-1">
-                    Comments
-                  </Link>
-                  {post.user === auth.user.id ? (
-                    <button
-                      onClick={this.onDeleteClick.bind(this, post._id)}
-                      type="button"
-                      className="btn btn-full"
-                    >
-                      <i className="fas fa-times" />
-                    </button>
-                  ) : null}
-                </span>
-              ) : null}
-            </div>
-          </div>
+      <section className="section-post-item">
+        <div className="box">
+          <p>{post.name}</p>
         </div>
+        <div className="box">
+          <p>{post.text}</p>
+        </div>
+        {showActions ? (
+          <span>
+            <button
+              onClick={this.onLikeClick.bind(this, post._id)}
+              type="button"
+              className="btn-icon"
+            >
+              <i
+                className={classnames("fas fa-thumbs-up", {
+                  "btn-like": this.findUserLike(post.likes)
+                })}
+              />
+              <span>{post.likes.length}</span>
+            </button>
+            <button
+              onClick={this.onUnlikeClick.bind(this, post._id)}
+              type="button"
+              className="btn-icon"
+            >
+              <i className="text-secondary fas fa-thumbs-down" />
+            </button>
+            <Link to={`/post/${post._id}`} className="btn">
+              Comments
+            </Link>
+            {post.user === auth.user.id ? (
+              <button
+                onClick={this.onDeleteClick.bind(this, post._id)}
+                type="button"
+                className="btn-icon btn-delete"
+              >
+                <i className="fas fa-times" />
+              </button>
+            ) : null}
+          </span>
+        ) : null}
       </section>
     );
   }

@@ -19,11 +19,15 @@ class Navbar extends Component {
     const authLinks = (
       <ul className="main-nav">
         <li>
-          <Link to="/profiles">tapprs</Link>
+          <Link to="/profiles">callrs</Link>
         </li>
         <li>
-          <Link to="/feed">Feed</Link>
+          <Link to="/feed">Board</Link>
         </li>
+        <li>
+          <Link to="/location">Map</Link>
+        </li>
+
         <li>
           <Link to="/dashboard">Dashboard</Link>
         </li>
@@ -38,7 +42,7 @@ class Navbar extends Component {
     const guestLinks = (
       <ul className="main-nav">
         <li>
-          <Link to="/profiles">tapprs</Link>
+          <Link to="/profiles">callrs</Link>
         </li>
         <li>
           <Link to="/register">sign up</Link>

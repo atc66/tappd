@@ -54,7 +54,7 @@ class Login extends Component {
             <h2>Log In</h2>
           </div>
           <div className="row">
-            <h3 className="form-header">Sign in to your Tappd account</h3>
+            <h3 className="form-header">Sign in to your Callr account</h3>
           </div>
           <div className="row">
             <form onSubmit={this.onSubmit}>

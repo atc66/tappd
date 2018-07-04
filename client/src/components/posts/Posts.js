@@ -19,6 +19,7 @@ class Posts extends Component {
     } else {
       postContent = <PostFeed posts={posts} />;
     }
+
     return (
       <div className="feed">
         <div className="row">

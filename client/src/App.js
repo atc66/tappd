@@ -23,11 +23,15 @@ import Profiles from "./components/profiles/Profiles";
 import Profile from "./components/profile/Profile";
 import Posts from "./components/posts/Posts";
 import Post from "./components/post/Post";
+import Locations from "./components/locations/Locations";
+import Location from "./components/location/Location";
 import NotFound from "./components/not-found/NotFound";
 
 import "./App.css";
 import "./grid.css";
 import "./normalize.css";
+
+console.log(process.env.REACT_APP_MAP_API_KEY);
 
 // Check for token, on every page
 if (localStorage.jwtToken) {
@@ -84,6 +88,12 @@ class App extends Component {
               </Switch>
               <Switch>
                 <PrivateRoute exact path="/post/:id" component={Post} />
+              </Switch>
+              <Switch>
+                <PrivateRoute exact path="/location" component={Locations} />
+              </Switch>
+              <Switch>
+                <PrivateRoute exact path="/location/:id" component={Location} />
               </Switch>
               <Route exact path="/not-found" component={NotFound} />
             </div>
