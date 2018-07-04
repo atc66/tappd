@@ -10,6 +10,9 @@ const LocationSchema = new Schema({
     type: String,
     required: true
   },
+  name: {
+    type: String
+  },
   lat: {
     type: Number,
     required: true

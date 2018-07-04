@@ -58,7 +58,7 @@ class Register extends Component {
             <h2>Sign Up</h2>
           </div>
           <div className="row">
-            <h3 className="form-header">Create your Tappd account</h3>
+            <h3 className="form-header">Create your FirstCall account</h3>
           </div>
           <div className="row">
             <form noValidate onSubmit={this.onSubmit}>

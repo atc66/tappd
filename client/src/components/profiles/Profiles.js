@@ -27,7 +27,7 @@ class Profiles extends Component {
     return (
       <section>
         <div className="row">
-          <h2>Tappr Profiles</h2>
+          <h2>Callr Profiles</h2>
           {profileItems}
         </div>
       </section>

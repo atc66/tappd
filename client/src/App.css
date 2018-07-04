@@ -124,6 +124,7 @@ button,
 .btn:link,
 .btn:visited,
 input[type="submit"] {
+  cursor: pointer;
   display: inline-block;
   padding: 10px 30px;
   font-weight: 300;
@@ -136,7 +137,8 @@ input[type="submit"] {
 
 .btn-full:link,
 .btn-full:visited,
-input[type="submit"] {
+input[type="submit"],
+button[type="submit"] {
   color: #fff;
   background-color: #e67e22;
   margin-right: 15px;
@@ -163,6 +165,11 @@ input[type="submit"]:active {
 .btn-ghost:active {
   border: 1px solid #cf6d17;
   color: #fff;
+}
+
+.btn-icon {
+  border: none;
+  cursor: pointer;
 }
 
 /* ------------------------- */
@@ -445,13 +452,15 @@ textarea {
 }
 
 .section-profile-header,
-.section-profile-about {
+.section-profile-about,
+.section-post-item {
   border: 1px solid #bdbdbd;
 }
 
 .section-profile-header {
   background-color: #dcdada;
   border-bottom: none;
+  margin-top: 40px;
 }
 .section-profile-about {
   background-color: #f9f9f9;
@@ -478,9 +487,41 @@ textarea {
 }
 
 /* ---------------------- */
-/* -----like button --- */
+/* -----special button --- */
 /* ---------------------- */
 
 .btn-like {
   color: #008000;
+}
+
+.btn-delete {
+  margin-left: 5px;
+  background-color: #ff0000;
+}
+
+/* ---------------------- */
+/* -----Map --- */
+/* ---------------------- */
+
+#map {
+  bottom: 0px;
+  height: 500px;
+  width: 500px;
+  border: 1px solid black;
+}
+
+/* ---------------------- */
+/* -----Posts --- */
+/* ---------------------- */
+.section-post-about {
+  background-color: #f9f9f9;
+  border-top: none;
+}
+
+.section-post-item:first-of-type {
+  margin-top: 40px;
+}
+
+.section-post-item:last-of-type {
+  margin-bottom: 40px;
 }

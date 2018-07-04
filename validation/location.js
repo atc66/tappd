@@ -6,6 +6,8 @@ module.exports = function validateLocationInput(data) {
 
   data.title = !isEmpty(data.title) ? data.title : "";
   data.description = !isEmpty(data.description) ? data.description : "";
+  data.lat = !isEmpty(data.lat) ? data.lat : "";
+  data.lng = !isEmpty(data.lng) ? data.lng : "";
 
   // Empty Error validator
   if (Validator.isEmpty(data.title)) {

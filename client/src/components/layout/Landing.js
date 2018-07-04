@@ -28,9 +28,9 @@ class Landing extends Component {
           <div className="row">
             <h2>Go somewhere new &mdash; not across the street</h2>
             <p className="long-copy">
-              Hello, we're Tappd, your new premium Happy Hour finder. We know
-              you're always busy. No time for search for specials. So let us
-              take care of that, we're really good at it, we promise!
+              Hello, we're FirstCall, your new premium Happy Hour finder. We
+              know you're always busy. No time for search for specials. So let
+              us take care of that, we're really good at it, we promise!
             </p>
           </div>
 
@@ -84,7 +84,7 @@ class Landing extends Component {
                 href="https://www.twitter.com
               "
               >
-                @tappd_phl
+                @firstcall_phl
               </a>
             </div>
           </div>
