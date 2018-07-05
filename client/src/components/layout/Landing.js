@@ -75,11 +75,11 @@ class Landing extends Component {
             <h3 className="city-feature">Philadelphia</h3>
             <div className="city-feature">
               <i className="fas fa-building icon-small" />
-              300+ bars
+              300+ BARS
             </div>
             <div className="city-feature">
               <i className="fas fa-users icon-small" />
-              500 + users
+              1 MILLION + RESIDENTS
             </div>
             <div className="city-feature">
               <i className="fab fa-twitter icon-small" />

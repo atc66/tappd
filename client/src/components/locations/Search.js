@@ -127,8 +127,8 @@ class Search extends Component {
                   {suggestions.length > 0 && (
                     <div>
                       {suggestions.map(suggestion => {
-                        const className = classnames("Demo__suggestion-item", {
-                          "Demo__suggestion-item--active": suggestion.active
+                        const className = classnames("suggestion", {
+                          "suggestion-item--active": suggestion.active
                         });
                         return (
                           <div
