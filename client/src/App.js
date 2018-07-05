@@ -31,8 +31,6 @@ import "./App.css";
 import "./grid.css";
 import "./normalize.css";
 
-console.log(process.env.REACT_APP_MAP_API_KEY);
-
 // Check for token, on every page
 if (localStorage.jwtToken) {
   // Set auth token header auth

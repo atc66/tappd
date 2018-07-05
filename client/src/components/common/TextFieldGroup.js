@@ -1,5 +1,4 @@
 import React from "react";
-// import classnames from "classnames";
 import PropTypes from "prop-types";
 
 const TextFieldGroup = ({
@@ -14,7 +13,7 @@ const TextFieldGroup = ({
   disabled
 }) => {
   return (
-    <div>
+    <div className="profile-input">
       <input
         type={type}
         placeholder={placeholder}
@@ -32,7 +31,7 @@ const TextFieldGroup = ({
 TextFieldGroup.propTypes = {
   name: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
-  value: PropTypes.string.isRequired,
+  // value: PropTypes.string.isRequired,
   info: PropTypes.string,
   error: PropTypes.string,
   type: PropTypes.string.isRequired,

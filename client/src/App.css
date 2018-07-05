@@ -20,16 +20,6 @@ body {
   overflow-x: hidden;
 }
 
-h1 {
-  /* h1 has margin from normalize */
-  margin-top: 0;
-  margin-bottom: 20px;
-  color: #fff;
-  /* Our basic font size is 20px set in the html rule, we want this to be 200% */
-  font-size: 240%;
-  word-spacing: 3px;
-}
-
 .heading {
   color: #555;
 }
@@ -44,10 +34,6 @@ h1 {
 
 section {
   padding: 80px 0;
-}
-
-.box {
-  padding: 1%;
 }
 
 a:link,
@@ -101,7 +87,7 @@ nav {
   color: #fff;
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 90%;
+  font-size: 120%;
   border-bottom: 2px solid transparent;
 }
 
@@ -184,12 +170,13 @@ h3 {
 }
 
 h1 {
-  /* h1 has magin from normalize */
+  /* h1 has margin from normalize */
   margin-top: 0;
   margin-bottom: 20px;
   color: #fff;
   /* Our basic font size is 20px set in the html rule, we want this to be 200% */
-  font-size: 240%;
+  font-size: 400%;
+  font-weight: 250;
   word-spacing: 3px;
 }
 
@@ -203,6 +190,10 @@ h2 {
 h3 {
   font-size: 110%;
   margin-bottom: 15px;
+}
+
+.h-landing {
+  color: #fff;
 }
 
 h2:after {
@@ -280,8 +271,12 @@ header {
 
 .box {
   width: 100%;
+  padding: 1%;
   height: auto;
   margin-bottom: 15px;
+}
+.box-map {
+  text-align: center;
 }
 
 .city-feature {
@@ -410,9 +405,13 @@ input[type="email"],
 input[type="password"],
 textarea {
   width: 100%;
-  padding: 7px;
+  padding: 10px;
   border-radius: 3px;
   border: 1px solid #ccc;
+}
+
+textarea {
+  padding-bottom: 40px;
 }
 
 .form-submit {
@@ -486,17 +485,18 @@ textarea {
   text-align: center;
 }
 
+.profile-input {
+  margin-bottom: 30px;
+}
+.profile-optional {
+  margin-left: 10px;
+}
 /* ---------------------- */
 /* -----special button --- */
 /* ---------------------- */
 
 .btn-like {
   color: #008000;
-}
-
-.btn-delete {
-  margin-left: 5px;
-  background-color: #ff0000;
 }
 
 /* ---------------------- */
@@ -524,4 +524,14 @@ textarea {
 
 .section-post-item:last-of-type {
   margin-bottom: 40px;
+}
+
+.section-post-item:nth-child(2n + 2),
+.section-post-item:nth-child(2n + 2) .btn-icon:nth-child(-n + 2) {
+  background-color: #e7e7e7;
+}
+
+.btn-delete {
+  margin-left: 5px;
+  background-color: #ff0000;
 }

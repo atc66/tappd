@@ -15,7 +15,10 @@ class Landing extends Component {
       <div>
         <header>
           <div className="hero-text-box">
-            <h1>No more indecision. Find your Happy Hour.</h1>
+            <h1>FirstCall</h1>
+            <h3 className="h-landing">
+              You call the shots. Help eachother find the best happy hour.
+            </h3>
             <Link className="btn btn-full" to="/register">
               Sign Up
             </Link>
@@ -30,7 +33,8 @@ class Landing extends Component {
             <p className="long-copy">
               Hello, we're FirstCall, your new premium Happy Hour finder. We
               know you're always busy. No time for search for specials. So let
-              us take care of that, we're really good at it, we promise!
+              other Callrs take care of that, they're really good at it, we
+              promise!
             </p>
           </div>
 
@@ -47,9 +51,8 @@ class Landing extends Component {
               <i className="fas fa-utensils icon-big" />
               <h3> Where do you want to go?</h3>
               <p>
-                Do you hate that question? Me too. We want you to be 100% happy.
-                No one likes missing half off apps, or going to that bar that
-                sells $9 domestics.
+                Do you hate that question? Us too. We want you to be 100% happy.
+                Spend more time at Happy Hour, instead of looking for one!
               </p>
             </div>
             <div className="col span-1-of-3 box">
@@ -57,8 +60,8 @@ class Landing extends Component {
               <h3> 100% Adjustable </h3>
               <p>
                 Is that special no longer happening? Are we missing the newest
-                pub? We are customer driven vote for your favorite spot, and if
-                we don't have it let us know!
+                pub? We are customer driven so vote for your favorite spot, and
+                if we don't have it let us know!
               </p>
             </div>
           </div>

@@ -4,6 +4,11 @@ import { connect } from "react-redux";
 import TextFieldGroup from "../common/TextFieldGroup";
 import TextAreaFieldGroup from "../common/TextAreaFieldGroup";
 import { addLocation } from "../../actions/locationActions";
+// Addition
+import PlacesAutocomplete, {
+  geocodeByAddress,
+  getLatLng
+} from "react-places-autocomplete";
 
 class LocationForm extends Component {
   constructor(props) {
@@ -51,7 +56,7 @@ class LocationForm extends Component {
       <section className="section-profile-header">
         <div>
           <div className="box">
-            <h2>Add a Location</h2>
+            <h2>Add a Happy Hour</h2>
             <div>
               <form onSubmit={this.onSubmit}>
                 <div className="form-group">

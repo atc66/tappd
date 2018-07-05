@@ -112,7 +112,7 @@ class CreateProfile extends Component {
                 value={this.state.location}
                 onChange={this.onChange}
                 error={errors.location}
-                info="City and State (New York, NY)"
+                info="City and State (Philadelphia, PA)"
               />
               <TextAreaFieldGroup
                 placeholder="A short bio of yourself"
@@ -132,9 +132,9 @@ class CreateProfile extends Component {
                   }}
                   className="btn btn-ghost"
                 >
-                  Add Social Network Links
+                  Add Social Media Links
                 </button>
-                <span className="text-muted">Optional</span>
+                <span className="profile-optional">Optional</span>
                 {socialInputs}
               </section>
               <div className="row">

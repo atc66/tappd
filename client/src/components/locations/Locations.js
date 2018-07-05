@@ -1,17 +1,18 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import LocationForm from "./LocationForm";
 import LocationFeed from "./LocationFeed";
+
+// HTML FINDING YOUR LATLNG
+// import FindMe from "./FindMe";
+
+import { geolocated } from "react-geolocated";
+
+// GoogleMAP API SEARCH FEATURE
+import Search from "./Search";
+
 import Spinner from "../common/Spinner";
 import { getLocations } from "../../actions/locationActions";
-
-import {
-  withScriptjs,
-  withGoogleMap,
-  GoogleMap
-  // Marker
-} from "react-google-maps";
 
 class Locations extends Component {
   componentDidMount() {
@@ -29,59 +30,13 @@ class Locations extends Component {
       locationContent = <LocationFeed locations={locations} />;
     }
 
-    var x = document.querySelector("#demo");
-    let latit;
-    let longit;
-
-    function getLocation() {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-      } else {
-        x.innerHTML = "Geolocation is not supported by this browser.";
-      }
-    }
-
-    function showPosition(position) {
-      x.innerHTML =
-        "Latitude: " +
-        position.coords.latitude +
-        "<br>Longitude: " +
-        position.coords.longitude;
-      latit = position.coords.latitude;
-      console.log(latit);
-
-      longit = position.coords.longitude;
-      console.log(longit);
-      document.getElementById("latitude").value = latit;
-      document.getElementById("longitudecode").value = longit;
-    }
-
-    const MapWithAMarker = withScriptjs(
-      withGoogleMap(props => (
-        <GoogleMap
-          defaultZoom={15}
-          defaultCenter={{ lat: 39.952406, lng: -75.163678 }}
-        >
-          {/* <Marker position={{ lat: 39.952406, lng: -75.163678 }} /> */}
-        </GoogleMap>
-      ))
-    );
-
     return (
       <section>
-        <h2>First Call</h2>
-        <div className="this-a-test">
-          <p id="demo" />
+        <h2>happy hours</h2>
+        <div>
+          {locationContent}
+          <Search />
         </div>
-        <MapWithAMarker
-          googleMapURL="https://maps.googleapis.com/maps/api/js?key=&v=3.exp&libraries=geometry,drawing,places"
-          loadingElement={<div style={{ height: `100%` }} />}
-          containerElement={<div style={{ height: `500px` }} />}
-          mapElement={<div style={{ height: `100%` }} />}
-        />
-
-        <LocationForm />
-        {locationContent}
       </section>
     );
   }
@@ -89,14 +44,16 @@ class Locations extends Component {
 
 Locations.propTypes = {
   getLocations: PropTypes.func.isRequired,
-  location: PropTypes.object.isRequired
+  location: PropTypes.object.isRequired,
+  coords: PropTypes.object
 };
 
 const mapStateToProps = state => ({
-  location: state.location
+  location: state.location,
+  coords: state.coords
 });
 
 export default connect(
   mapStateToProps,
-  { getLocations }
+  { getLocations, geolocated }
 )(Locations);
