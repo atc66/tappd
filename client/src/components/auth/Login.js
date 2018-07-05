@@ -58,17 +58,20 @@ class Login extends Component {
           </div>
           <div className="row">
             <form onSubmit={this.onSubmit}>
-              <div className="col span-1-of-3">
-                <label htmlFor="name">Email</label>
+              <div className="row">
+                <div className="col span-1-of-3">
+                  <label htmlFor="name">Email</label>
+                </div>
+                <TextFieldGroup
+                  placeholder="Email"
+                  name="email"
+                  type="email"
+                  value={this.state.email}
+                  onChange={this.onChange}
+                  error={errors.email}
+                />
               </div>
-              <TextFieldGroup
-                placeholder="Email"
-                name="email"
-                type="email"
-                value={this.state.email}
-                onChange={this.onChange}
-                error={errors.email}
-              />
+
               <div className="row">
                 <div className="col span-1-of-3">
                   <label htmlFor="password">Password</label>

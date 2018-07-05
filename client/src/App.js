@@ -32,6 +32,7 @@ import NotFound from "./components/not-found/NotFound";
 import "./App.css";
 import "./grid.css";
 import "./normalize.css";
+import "./AppQuery.css";
 
 // console.log(apiKey);
 
