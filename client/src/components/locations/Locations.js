@@ -29,7 +29,7 @@ class Locations extends Component {
 
     return (
       <section>
-        <h2>happy hours</h2>
+        <h2>Happy Hours</h2>
         <div>
           {locationContent}
           <Search />
