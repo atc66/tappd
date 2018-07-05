@@ -4,6 +4,9 @@
     width: 100%;
     padding: 0 2%;
   }
+  .btn:link {
+    margin-bottom: 10px;
+  }
 }
 
 /* Larger cell phones/small tablets 481-767 */
@@ -17,21 +20,6 @@
 
   .hero-text-box {
     padding: 0 4%;
-  }
-
-  .col {
-    width: 100%;
-    margin: 0 0 4% 0;
-  }
-
-  .main-nav {
-    float: left;
-    margin-top: 35px;
-    margin-left: 55px;
-  }
-
-  .main-nav li {
-    display: block;
   }
 
   .main-nav li a:link,
@@ -63,10 +51,24 @@
   section {
     padding: 25px 0;
   }
-  .contact-form {
-    width: 100%;
-  }
   .city-photo {
     height: 200px;
+  }
+  .main-nav {
+    float: left;
+    margin-top: 35px;
+    margin-left: 55px;
+  }
+
+  .main-nav li {
+    display: block;
+  }
+  .btn:link {
+    margin: 25px;
+  }
+
+  .col .span-1-of-3,
+  .span-1-of-3 span {
+    margin-left: 25px;
   }
 }

@@ -9,7 +9,9 @@ class ProfileItem extends Component {
     return (
       <div>
         <div className="row">
-          <h3 className="col span-1-of-3">{profile.user.name}</h3>
+          <h3 className="col span-1-of-3">
+            <span>{profile.user.name}</span>
+          </h3>
           <p className="col span-1-of-3">
             {isEmpty(profile.location) ? null : <span>{profile.location}</span>}
           </p>

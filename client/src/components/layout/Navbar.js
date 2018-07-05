@@ -24,9 +24,9 @@ class Navbar extends Component {
         <li>
           <Link to="/profiles">callrs</Link>
         </li>
-        <li>
+        {/* <li>
           <Link to="/dashboard">My Profile</Link>
-        </li>
+        </li> */}
         <li>
           <a href="" onClick={this.onLogoutClick.bind(this)}>
             <span> logout </span>
