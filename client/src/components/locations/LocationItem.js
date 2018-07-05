@@ -57,7 +57,7 @@ class LocationItem extends Component {
       <div className="section-post-item">
         <div className="box box-map">
           <Map
-            googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places"
+            googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8Ol4HL1xS8Ihdc7l1MVatyC2H8wM0hKY&v=3.exp&libraries=geometry,drawing,places"
             loadingElement={<div style={{ height: `100%` }} />}
             containerElement={<div style={{ height: `300px` }} />}
             mapElement={<div style={{ height: `100%` }} />}
