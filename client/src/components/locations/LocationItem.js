@@ -17,8 +17,6 @@ import {
   Marker
 } from "react-google-maps";
 
-console.log(`${process.env.REACT_APP_MAP_API_KEY}`);
-
 class LocationItem extends Component {
   onDeleteClick(id) {
     this.props.deleteLocation(id);
