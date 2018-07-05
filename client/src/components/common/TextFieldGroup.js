@@ -13,7 +13,7 @@ const TextFieldGroup = ({
   disabled
 }) => {
   return (
-    <div className="profile-input">
+    <div>
       <input
         type={type}
         placeholder={placeholder}
