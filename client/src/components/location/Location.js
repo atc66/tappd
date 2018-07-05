@@ -22,19 +22,17 @@ class Location extends Component {
       locationContent = (
         <div>
           <LocationItem location={location} showActions={false} />
-          <CommentForm locationId={location._id} />
           <CommentFeed locationId={location._id} comments={location.comments} />
+          <CommentForm locationId={location._id} />
         </div>
       );
     }
     return (
-      <section>
-        <div className="row">
-          <Link to="/location" className="btn">
-            Back to Map
-          </Link>
-          {locationContent}
-        </div>
+      <section className="row">
+        <Link to="/location" className="btn">
+          Back to Map
+        </Link>
+        {locationContent}
       </section>
     );
   }

@@ -12,7 +12,8 @@ class CommentItem extends Component {
     const { comment, locationId, auth } = this.props;
 
     return (
-      <section className="section-post-item">
+      <div className="section-post-item">
+        {/* <section className="section-post-item"> */}
         <p className="box">{comment.name}</p>
         <p className="box">{comment.text}</p>
         {comment.user === auth.user.id ? (
@@ -24,7 +25,8 @@ class CommentItem extends Component {
             <i className="fas fa-times" />
           </button>
         ) : null}
-      </section>
+        {/* </section> */}
+      </div>
     );
   }
 }

@@ -63,7 +63,7 @@ class Dashboard extends Component {
         <div className="row">
           <div className="row">
             <div className="row">
-              <h2>Dashboard</h2>
+              <h2>My Profile</h2>
               {dashboardContent}
             </div>
           </div>

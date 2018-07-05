@@ -45,14 +45,11 @@ class CommentForm extends Component {
       <section className="section-profile-header">
         <div className="post-form mb-3">
           <div className="card card-info">
-            <div className="card-header bg-info text-white">
-              Leave a Comment...
-            </div>
             <div className="card-body">
               <form onSubmit={this.onSubmit}>
                 <div className="form-group">
                   <TextAreaFieldGroup
-                    placeholder="Reply to Location"
+                    placeholder="Is there another special? Do you like this place? Should Pete Rose be in the Hall of Fame? Leave a comment..."
                     name="text"
                     value={this.state.text}
                     onChange={this.onChange}

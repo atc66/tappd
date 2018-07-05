@@ -9,6 +9,14 @@ import {
   removeLike
 } from "../../actions/locationActions";
 
+// The map
+import {
+  withScriptjs,
+  withGoogleMap,
+  GoogleMap,
+  Marker
+} from "react-google-maps";
+
 class LocationItem extends Component {
   onDeleteClick(id) {
     this.props.deleteLocation(id);
@@ -30,17 +38,35 @@ class LocationItem extends Component {
       return false;
     }
   }
+
   render() {
     const { location, auth, showActions } = this.props;
+
+    const Map = withScriptjs(
+      withGoogleMap(props => (
+        <GoogleMap
+          defaultZoom={19}
+          defaultCenter={{ lat: location.lat, lng: location.lng }}
+        >
+          <Marker position={{ lat: location.lat, lng: location.lng }} />
+        </GoogleMap>
+      ))
+    );
+
     return (
-      <section className="section-post-item">
-        <h2>Locations</h2>
-        <div className="box">
-          <p>{location.name}</p>
-        </div>
-        <div className="box">
+      <div className="section-post-item">
+        <div className="box box-map">
+          <Map
+            googleMapURL="${process.env.REACT_APP_TESTING_API_KEY}"
+            loadingElement={<div style={{ height: `100%` }} />}
+            containerElement={<div style={{ height: `300px` }} />}
+            mapElement={<div style={{ height: `100%` }} />}
+          />
+
           <p>{location.title}</p>
-          <p>{location.description}</p>
+          <p>
+            <strong>Specials:</strong> <span>{location.description}</span>
+          </p>
           {showActions ? (
             <span>
               <button
@@ -68,7 +94,7 @@ class LocationItem extends Component {
                 to={`/location/${location._id}`}
                 className="btn btn-info mr-1"
               >
-                Comments
+                Leave a Review
               </Link>
               {location.user === auth.user.id ? (
                 <button
@@ -82,7 +108,7 @@ class LocationItem extends Component {
             </span>
           ) : null}
         </div>
-      </section>
+      </div>
     );
   }
 }
