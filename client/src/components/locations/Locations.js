@@ -3,9 +3,6 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import LocationFeed from "./LocationFeed";
 
-// HTML FINDING YOUR LATLNG
-// import FindMe from "./FindMe";
-
 import { geolocated } from "react-geolocated";
 
 // GoogleMAP API SEARCH FEATURE
