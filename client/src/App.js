@@ -10,6 +10,8 @@ import store from "./store";
 
 import PrivateRoute from "./components/common/PrivateRoute";
 
+// import apiKey from "./config/keys.js";
+
 // Components
 import Navbar from "./components/layout/Navbar";
 import Landing from "./components/layout/Landing";
@@ -30,6 +32,8 @@ import NotFound from "./components/not-found/NotFound";
 import "./App.css";
 import "./grid.css";
 import "./normalize.css";
+
+// console.log(apiKey);
 
 // Check for token, on every page
 if (localStorage.jwtToken) {

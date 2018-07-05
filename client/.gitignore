@@ -2,6 +2,8 @@
 
 #api keys
 .env
+/src/config
+
 
 # dependencies
 /node_modules

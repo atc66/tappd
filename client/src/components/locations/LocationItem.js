@@ -17,6 +17,8 @@ import {
   Marker
 } from "react-google-maps";
 
+console.log(`${process.env.REACT_APP_MAP_API_KEY}`);
+
 class LocationItem extends Component {
   onDeleteClick(id) {
     this.props.deleteLocation(id);
@@ -57,7 +59,7 @@ class LocationItem extends Component {
       <div className="section-post-item">
         <div className="box box-map">
           <Map
-            googleMapURL="${process.env.REACT_APP_TESTING_API_KEY}"
+            googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places"
             loadingElement={<div style={{ height: `100%` }} />}
             containerElement={<div style={{ height: `300px` }} />}
             mapElement={<div style={{ height: `100%` }} />}
