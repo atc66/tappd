@@ -89,10 +89,7 @@ class LocationItem extends Component {
               >
                 <i className="text-secondary fas fa-thumbs-down" />
               </button>
-              <Link
-                to={`/location/${location._id}`}
-                className="btn btn-info mr-1"
-              >
+              <Link to={`/location/${location._id}`} className="btn">
                 Leave a Review
               </Link>
               {location.user === auth.user.id ? (

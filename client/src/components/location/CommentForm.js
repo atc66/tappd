@@ -43,25 +43,21 @@ class CommentForm extends Component {
     const { errors } = this.state;
     return (
       <section className="section-profile-header">
-        <div className="post-form mb-3">
-          <div className="card card-info">
-            <div className="card-body">
-              <form onSubmit={this.onSubmit}>
-                <div className="form-group">
-                  <TextAreaFieldGroup
-                    placeholder="Is there another special? Do you like this place? Should Pete Rose be in the Hall of Fame? Leave a comment..."
-                    name="text"
-                    value={this.state.text}
-                    onChange={this.onChange}
-                    error={errors.text}
-                  />
-                </div>
-                <button type="submit" className="btn btn-dark">
-                  Submit
-                </button>
-              </form>
+        <div>
+          <form onSubmit={this.onSubmit}>
+            <div>
+              <TextAreaFieldGroup
+                placeholder="Is there another special? Do you like this place? Should Pete Rose be in the Hall of Fame? Leave a comment..."
+                name="text"
+                value={this.state.text}
+                onChange={this.onChange}
+                error={errors.text}
+              />
             </div>
-          </div>
+            <button type="submit" className="btn btn-dark">
+              Submit
+            </button>
+          </form>
         </div>
       </section>
     );
