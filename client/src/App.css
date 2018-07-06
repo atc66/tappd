@@ -598,6 +598,9 @@ textarea {
   section {
     padding: 25px 0;
   }
+  .hero-text-box {
+    top: 75%;
+  }
   .city-photo {
     height: 200px;
   }
