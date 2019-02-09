@@ -14,21 +14,21 @@ class ProfileHeader extends Component {
           <ul>
             {isEmpty(profile.social && profile.social.twitter) ? null : (
               <li>
-                <a href={profile.social.twitter} target="_blank">
+                <a href={profile.social.twitter} target="_blank" rel="noopener noreferrer">
                   <i className="fab fa-twitter fa-2x" />
                 </a>
               </li>
             )}
             {isEmpty(profile.social && profile.social.facebook) ? null : (
               <li>
-                <a href={profile.social.facebook} target="_blank">
+                <a href={profile.social.facebook} target="_blank" rel="noopener noreferrer">
                   <i className="fab fa-facebook fa-2x" />
                 </a>
               </li>
             )}
             {isEmpty(profile.social && profile.social.instagram) ? null : (
               <li>
-                <a href={profile.social.instagram} target="_blank">
+                <a href={profile.social.instagram} target="_blank" rel="noopener noreferrer">
                   <i className="fab fa-instagram fa-2x" />
                 </a>
               </li>
